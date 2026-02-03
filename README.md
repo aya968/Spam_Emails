@@ -48,3 +48,70 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, classification_report
 import plotly.express as px
+
+
+Data Preprocessing
+
+Remove duplicates to ensure unique SMS entries.
+
+Text cleaning:
+
+Lowercase text
+
+Remove punctuation and numbers
+
+Remove stopwords
+
+Apply stemming using PorterStemmer
+
+Tokenization: Convert text into tokens for feature extraction.
+
+Example cleaned message:
+
+Raw: Free entry in 2 a wkly comp to win FA Cup final...
+
+Cleaned: free entri wkli comp win fa cup final tkt st m
+
+
+Feature Extraction
+
+Used TF-IDF Vectorizer to convert text into numerical features.
+
+Limited to 3,000 features to reduce dimensionality.
+
+Handling Imbalanced Data
+
+Dataset is imbalanced: more ham messages than spam.
+
+Applied SMOTE (Synthetic Minority Oversampling Technique) to balance classes.
+
+Model Training
+
+Split dataset into train (80%) and test (20%) sets.
+
+Used Random Forest Classifier for classification.
+
+Model Performance:
+
+Accuracy: 99.2%
+
+Precision, Recall, F1-score: ~0.99 for both classes
+
+              precision    recall  f1-score   support
+ham              0.99      0.99      0.99       895
+spam             0.99      0.99      0.99       912
+
+
+Visualization
+
+Class Distribution: Pie chart showing proportion of spam vs ham.
+
+Word Clouds:
+
+Overall messages
+
+Only spam messages
+
+Only ham messages
+
+These visualizations help in understanding frequent words and patterns in messages.
